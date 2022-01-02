@@ -1,12 +1,13 @@
-version: 2
+version: 2.1
 orbs:
   browser-tools: circleci/browser-tools@1.2.3
 jobs:
   build:
     working_directory: ~/ng-project
     docker:
-      - image: cimg/node:16.13.1-browsers
+      - image: cimg/node:16.13.1-browser
     steps:
+      - browser-tools/install-browser-tools
       - run:
           command: |
             google-chrome --version
